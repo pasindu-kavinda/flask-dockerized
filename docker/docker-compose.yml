@@ -1,0 +1,12 @@
+version: '3'
+services:
+  flask-app:
+    build: .
+    ports:
+      - "8080:5000"
+    volumes:
+      - ..:/app:ro
+    environment:
+      - FLASK_APP=app.app:app
+      - FLASK_ENV=development
+      - FLASK_DEBUG=1
